@@ -1,0 +1,20 @@
+Scanner scan = new Scanner(System.in);
+String getText = "";
+		
+File file = new File("InText.txt");
+try {
+	FileWriter fw = new FileWriter(file);
+	while (true) {
+		System.out.print(">>");
+		getText = scan.nextLine();
+		if(getText.equals("exit")) {
+			break;
+		}
+		fw.append(getText+"\n");
+	}
+	fw.close();
+	System.out.println("완료 되었습니다.");
+	} catch (IOException e) {
+		e.printStackTrace();
+		System.out.println("File Error");
+}
